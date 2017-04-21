@@ -219,7 +219,7 @@ class Model extends Component {
   render () {
     let { schema, required, name, isRef } = this.props
     let $$ref = schema && schema.get("$$ref")
-    let modelName = $$ref && this.getModelName( $$ref )
+    let modelName = name || $$ref && this.getModelName( $$ref )
     let modelSchema, type
 
     if ( schema && (schema.get("type") || schema.get("properties")) ) {
